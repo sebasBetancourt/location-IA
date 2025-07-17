@@ -19,6 +19,7 @@
   "homepage": "https://github.com/sebasBetancourt/location-IA#readme",
   "dependencies": {
     "@faker-js/faker": "^9.9.0",
+    "axios": "^1.10.0",
     "chalk": "^4.1.2"
   }
 }
