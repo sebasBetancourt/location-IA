@@ -1,20 +1,20 @@
 const { faker } = require('@faker-js/faker');
 const fs = require('fs');
 
-function generarUna() {
-    return {
-        latitud: faker.location.latitude(),
-        longitud: faker.location.longitude()
-    };
+function generateOne(){
+  return {
+    latitud: faker.location.latitude(),
+    longitud: faker.location.longitude()
+  }
 }
 
-function generarMultiples(cantidad) {
-    const coords = [];
-    for (let i = 0; i < cantidad; i++) {
-        coords.push(generarUna());
-    }
-    fs.writeFileSync('coordenadas.json', JSON.stringify(coords, null, 2));
-    return coords;
+function generateMany(count){
+  const coordenada = []
+  for (let index = 0; index < count; index++) {
+    coordenada.push(generateOne());
+  }
+  fs.writeFileSync('coordenadas.json', JSON.stringify(coordenada, null, 2));
+  return coordenada;
 }
 
 function generarEnZona(cantidad, latMin, latMax, longMin, longMax) {
@@ -28,4 +28,4 @@ function generarEnZona(cantidad, latMin, latMax, longMin, longMax) {
     return coords;
 }
 
-module.exports = { generarUna, generarMultiples, generarEnZona };
+module.exports = { generateOne, generateMany, generarEnZona };
