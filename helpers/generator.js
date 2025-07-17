@@ -21,7 +21,7 @@ function generateMany(count){
 function generateInZone(cantidad, latMin, latMax, longMin, longMax) {
     const coordenadas = [];
     for (let i = 0; i < cantidad; i++) {
-        coords.push({
+        coordenadas.push({
             latitud: faker.location.latitude({ min: latMin, max: latMax }),
             longitud: faker.location.longitude({ min: longMin, max: longMax })
         });
